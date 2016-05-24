@@ -1,0 +1,30 @@
+{
+  "name": "@emartech/ui-framework-pug-mixins",
+  "description": "Pug (Jade) mixin library for Emarsys UI-Kit",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "exit 0",
+    "build": "jade --client --no-debug --out dist lib/index.jade",
+    "prepublish": "npm test && npm run build",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emartech/ui-framework-pug-mixins.git"
+  },
+  "release": {
+    "verifyConditions": {
+      "path": "./node_modules/semantic-release/dist/lib/plugin-noop.js"
+    }
+  },
+  "author": "UI Team, Content Team",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/emartech/ui-framework-pug-mixins/issues"
+  },
+  "homepage": "https://github.com/emartech/ui-framework-pug-mixins#readme",
+  "devDependencies": {
+    "jade": "^1.11.0",
+    "semantic-release": "4.3.5"
+  }
+}

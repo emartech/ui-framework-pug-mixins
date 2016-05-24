@@ -1,0 +1,47 @@
+mixin iconButton()
+  .e-btn&attributes(attributes)(
+  class={ 'e-btn-onlyicon': !block, 'e-tooltip': !!attributes.tooltip }
+  data-e-tooltip=attributes.tooltip
+  )
+    +icon(attributes.icon)
+    if (block)
+      block
+
+mixin button()
+  .e-btn&attributes(attributes)(
+  class={ 'e-tooltip': !!attributes.tooltip }
+  data-e-tooltip=attributes.tooltip
+  )
+    block
+
+mixin icon(name)
+  +svg(name)&attributes(attributes)(class={ 'e-icon-small': !!attributes.small }).e-icon
+
+mixin toolboxButton(name)
+  .e-btn.e-btn-onlyicon&attributes(attributes)(
+  class="toolbox-button e-tooltip e-tooltip-bottom"
+  data-e-tooltip=attributes.tooltip
+  )
+    +icon(name)
+
+mixin e-switch()
+  .e-switch
+    input.e-switch__input(
+    type="checkbox"
+    id=attributes.id
+    ng-model=attributes['ng-model']
+    ng-change=attributes['ng-change']
+    )
+    label.e-switch__toggle(for=attributes.id)
+  label.e-field__label-inline(for=attributes.id)= attributes.title
+
+mixin svg(name)
+  svg&attributes(attributes)
+    use(xlink:href="#" + name)
+
+mixin warning(translateId, data)
+  - data = data || '{}';
+  .e-alert.e-alert-withicon.e-alert-warning&attributes(attributes)
+    span.e-alert__icon
+      +icon("exclamation-circle")
+    span(ng-bind-html="'#{translateId}' | translate:#{data} | decode | htmlSafe")
