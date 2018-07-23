@@ -4,18 +4,13 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "exit 0",
-    "build": "jade --client --no-debug --out dist lib/index.jade",
-    "prepublish": "npm test && npm run build",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "build": "pug --client --no-debug --out dist lib/index.pug",
+    "prepare": "npm test && npm run build",
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/emartech/ui-framework-pug-mixins.git"
-  },
-  "release": {
-    "verifyConditions": {
-      "path": "./node_modules/semantic-release/dist/lib/plugin-noop.js"
-    }
   },
   "author": "Emarsys",
   "license": "MIT",
@@ -24,7 +19,8 @@
   },
   "homepage": "https://github.com/emartech/ui-framework-pug-mixins#readme",
   "devDependencies": {
-    "jade": "^1.11.0",
-    "semantic-release": "4.3.5"
-  }
+    "pug-cli": "1.0.0-alpha6",
+    "semantic-release": "15.8.1"
+  },
+  "dependencies": {}
 }
