@@ -17,8 +17,8 @@
       "path": "./node_modules/semantic-release/dist/lib/plugin-noop.js"
     }
   },
-  "author": "UI Team, Content Team",
-  "license": "UNLICENSED",
+  "author": "Emarsys",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/emartech/ui-framework-pug-mixins/issues"
   },
